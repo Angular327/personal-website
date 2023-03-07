@@ -13,9 +13,6 @@ function CameraComponent(props) {
     //set intiial starting values
     camera.position.set(...CameraMovements[0].position);
     camera.rotation.set(...CameraMovements[0].rotation.map((angle) => THREE.MathUtils.degToRad(angle)));
-    
-    // camera.lookAt(new THREE.Vector3(-18, 20, -10));
-    // console.log(camera.rotation);
 
     //loop every frame for camera movement
     let index = 0;
