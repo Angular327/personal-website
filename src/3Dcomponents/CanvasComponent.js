@@ -1,5 +1,5 @@
 import { Canvas } from "@react-three/fiber";
-import BuildingComponent from './BuildingComponent';
+import BuildingComponent from './Assets/BuildingComponent';
 import CameraComponent from './CameraComponent';
 
 function Landing() {
