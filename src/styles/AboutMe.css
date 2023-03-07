@@ -1,0 +1,100 @@
+/* Set up some basic styles for the page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 32px;
+    margin: 0;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  p {
+    margin: 0;
+  }
+  
+  /* Style the header section */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .header img {
+    width: 100px;
+  }
+  
+  /* Style the skills section */
+  .skills {
+    margin-bottom: 20px;
+  }
+  
+  .skills h2 {
+    margin-bottom: 10px;
+  }
+  
+  .skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .skills li {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  /* Style the experience section */
+  .experience {
+    margin-bottom: 20px;
+  }
+  
+  .experience h2 {
+    margin-bottom: 10px;
+  }
+  
+  .experience ul {
+    margin-left: 20px;
+  }
+  
+  .experience li {
+    margin-bottom: 10px;
+  }
+  
+  /* Style the education section */
+  .education {
+    margin-bottom: 20px;
+  }
+  
+  .education h2 {
+    margin-bottom: 10px;
+  }
+  
+  .education p {
+    margin-bottom: 5px;
+  }
+  

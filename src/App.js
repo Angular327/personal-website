@@ -1,9 +1,10 @@
-import Landing from "./3Dcomponents/CanvasComponent";
+import CanvasComponent from "./3Dcomponents/CanvasComponent";
+import AboutMe from "./components/AboutMe";
 
 function App() {
   return (
     <>
-      <Landing />
+      <CanvasComponent />
     </>
   );
 }
