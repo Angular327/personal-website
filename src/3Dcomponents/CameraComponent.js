@@ -1,9 +1,9 @@
 import CameraMovementComponent from './Assets/CameraMovementComponent';
-import { CameraMovements1to2, CameraMovements2to3 } from '../Utils/CameraMovements';
+import { CameraMovements1to2, CameraMovements2to3, CameraPositions } from '../Utils/CameraMovements';
 
 
 function cameraComponent() {
-    return <CameraMovementComponent CameraMovements={CameraMovements1to2}/>;
+    return <CameraMovementComponent CameraMovements={CameraPositions[0]}/>;
   }
   
 export default cameraComponent;

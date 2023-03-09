@@ -1,100 +1,74 @@
-/* Set up some basic styles for the page */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  h1 {
-    font-size: 32px;
-    margin: 0;
-  }
-  
-  h2 {
-    font-size: 24px;
-    margin: 0;
-  }
-  
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  
-  li {
-    margin: 0;
-    padding: 0;
-  }
-  
-  p {
-    margin: 0;
-  }
-  
-  /* Style the header section */
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .header img {
-    width: 100px;
-  }
-  
-  /* Style the skills section */
-  .skills {
-    margin-bottom: 20px;
-  }
-  
-  .skills h2 {
-    margin-bottom: 10px;
-  }
-  
-  .skills ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .skills li {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-  
-  /* Style the experience section */
-  .experience {
-    margin-bottom: 20px;
-  }
-  
-  .experience h2 {
-    margin-bottom: 10px;
-  }
-  
-  .experience ul {
-    margin-left: 20px;
-  }
-  
-  .experience li {
-    margin-bottom: 10px;
-  }
-  
-  /* Style the education section */
-  .education {
-    margin-bottom: 20px;
-  }
-  
-  .education h2 {
-    margin-bottom: 10px;
-  }
-  
-  .education p {
-    margin-bottom: 5px;
-  }
-  
+.container {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: #1d3557;
+}
+
+.contact {
+  font-size: 16px;
+  color: #2d2d2d;
+  margin-bottom: 5px;
+}
+
+.contact a {
+  color: #1d3557;
+}
+
+.subtitle {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #1d3557;
+}
+
+.skill-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.skill-list li {
+  font-size: 18px;
+  color: #2d2d2d;
+  margin-bottom: 5px;
+}
+
+.experience {
+  margin-bottom: 20px;
+}
+
+.experience h4 {
+  font-size: 24px;
+  margin-bottom: 5px;
+  color: #1d3557;
+}
+
+.date {
+  font-size: 16px;
+  color: #2d2d2d;
+  margin-bottom: 5px;
+}
+
+.experience ul {
+  list-style: none;
+  padding: 0;
+  margin-left: 20px;
+}
+
+.experience ul li {
+  font-size: 18px;
+  color: #2d2d2d;
+  margin-bottom: 5px;
+}
+
+p {
+  font-size: 18px;
+  color: #2d2d2d;
+  margin-bottom: 5px;
+}

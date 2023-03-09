@@ -18,15 +18,17 @@ function CameraComponent(props) {
     let index = 0;
 
     //Camera Loop
-    useFrame(({}) => {
+    useFrame(({ }) => {
         //change indeces of point transition
-        if(index + 2 < CameraMovements.length && clockRef.current.getElapsedTime() > CameraMovements[index + 1].time) {
+        if (index + 2 < CameraMovements.length && clockRef.current.getElapsedTime() > CameraMovements[index + 1].time) {
             index += 1;
         }
 
         //calculate time for transition
-        const t = Math.min(1, (clockRef.current.getElapsedTime() - CameraMovements[index].time) / (CameraMovements[index + 1].time - CameraMovements[index].time));
-        updatePosition(t, camera , index, CameraMovements);
+        if (CameraMovements.length > 1) {
+            const t = Math.min(1, (clockRef.current.getElapsedTime() - CameraMovements[index].time) / (CameraMovements[index + 1].time - CameraMovements[index].time));
+            updatePosition(t, camera, index, CameraMovements);
+        }
     });
 
     //set perspective camera
