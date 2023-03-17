@@ -1,14 +1,18 @@
 import CanvasComponent from "./3Dcomponents/CanvasComponent";
 import AboutMe from "./components/AboutMe";
 import { useState } from "react";
-import RightArrow from "./components/RightArrow";
+import LandingPage from "./components/LandingPage";
+import ContactAndLinks from "./components/ContactAndLinks";
+import SkillsAndExperience from "./components/SkillsAndExperience";
+
 function App() {
 
   return (
     <div>
-      <AboutMe />
+      <LandingPage />
+      <SkillsAndExperience />
+      <ContactAndLinks />
       <CanvasComponent />
-      <RightArrow />
     </div>
   );
 }

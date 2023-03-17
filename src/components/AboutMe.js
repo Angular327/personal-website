@@ -40,9 +40,6 @@ function AboutMe() {
           <li>Designed and implemented a user-friendly Front-end and RESTful APIs that allow non-technical users to easily access and analyze shipment data.</li>
         </ul>
       </div>
-      <h3 className="subtitle">EDUCATION</h3>
-      <p>Bachelor of Science (BS) in Computer Science</p>
-      <p>STEVENS INSTITUTE OF TECHNOLOGY, Hoboken, NJ</p>
     </div>
   );
 }
