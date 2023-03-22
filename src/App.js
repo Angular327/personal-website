@@ -11,7 +11,6 @@ function App() {
     <div>
       <LandingPage />
       <SkillsAndExperience />
-      <ContactAndLinks />
       <CanvasComponent />
     </div>
   );

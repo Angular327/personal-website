@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { useThree, useFrame } from 'react-three-fiber'
 import * as THREE from 'three';
-import { updatePosition } from '../../Utils/UpdatePosition';
+import { updatePosition } from '../../Utils/MathematicFormulas';
 
 function CameraComponent(props) {
     //set up refs for camera and times
@@ -24,7 +24,7 @@ function CameraComponent(props) {
             index += 1;
         }
 
-        //calculate time for transition
+        //calculate time for transitioncameraPosition
         if (CameraMovements.length > 1) {
             const t = Math.min(1, (clockRef.current.getElapsedTime() - CameraMovements[index].time) / (CameraMovements[index + 1].time - CameraMovements[index].time));
             updatePosition(t, camera, index, CameraMovements);

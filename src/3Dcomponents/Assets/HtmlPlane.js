@@ -1,15 +1,58 @@
-import React from 'react';
-import { Plane } from '@react-three/drei';
-import { Html } from '@react-three/drei';
+import React, { useState, useEffect } from "react";
+import { Plane } from "@react-three/drei";
+import { BillBoards } from "../../Utils/BillboardPositions";
+import { useThree } from "@react-three/fiber";
+import * as THREE from "three";
+import domtoimage from 'dom-to-image';
 
-const HtmlPlane = ({ htmlComponent: HtmlComponent }) => {
+export const HtmlPlane = ({ index }) => {
+  const [texture, setTexture] = useState(null);
+  const [dimensions, setDimensions] = useState([0, 0]);
+  const [position, setPosition] = useState([0, 0, 0]);
+  const [rotation, setRotation] = useState([0, 0, 0]);
+
+  const { viewport } = useThree();
+  const aspectRatio = viewport.width / viewport.height;
+
+  useEffect(() => {
+    const element = document.getElementById(BillBoards[index].id);
+    element.classList.add("visible");
+
+    domtoimage.toBlob(element)
+      .then((blob) => {
+        const url = URL.createObjectURL(blob);
+        const loader = new THREE.TextureLoader();
+
+        loader.load(url, (generatedTexture) => {
+          generatedTexture.minFilter = THREE.LinearFilter;
+          generatedTexture.generateMipmaps = false;
+          generatedTexture.needsUpdate = true;
+          setTexture(generatedTexture);
+          setDimensions([
+            BillBoards[index].height * aspectRatio,
+            BillBoards[index].width,
+          ]);
+          setPosition(BillBoards[index].position);
+          setRotation(BillBoards[index].rotation);
+        });
+      });
+  }, []);
+
   return (
-    <Plane args={[1, 1]} position={[0, 0, 0]}>
-      <meshBasicMaterial>
-        <Html scaleFactor={10}>
-          <HtmlComponent />
-        </Html>
-      </meshBasicMaterial>
+    <Plane
+      args={dimensions}
+      position={position}
+      rotation={rotation}
+    >
+      {texture ? (
+        <meshBasicMaterial
+          map={texture}
+          transparent={true}
+          opacity={1}
+        />
+      ) : (
+        <meshBasicMaterial color="gray" />
+      )}
     </Plane>
   );
 };

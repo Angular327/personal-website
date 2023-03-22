@@ -4,7 +4,7 @@ import profilePicture from '../assets/profile-picture.jpg';
 import DownArrow from './Arrows/DownArrow';
 const LandingPage = () => {
   return (
-    <div className="landing-page">
+    <div id="landing-page">
       <div className="content-container">
         <img src={profilePicture} alt="Profile" className="profile-picture" />
         <h1>Miles Rosenberg</h1>
