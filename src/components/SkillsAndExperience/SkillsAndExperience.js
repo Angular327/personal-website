@@ -3,10 +3,22 @@ import './SkillsAndExperience.css'
 import UpArrow from '../Arrows/UpArrow';
 import DownArrow from '../Arrows/DownArrow';
 
-const SkillsAndExperience = ({ activeMovement, setActiveMovement }) => {
+const SkillsAndExperience = ({ setActiveMovement, loading = false }) => {
+
+  const upClick = {
+    location: 0,
+    movement: 2,
+    isActive: true
+  }
+
+  const handleArrowClick = () => {
+    setActiveMovement(upClick);
+  };
+
+
   return (
-    <div id="skills-and-experience"> 
-      <UpArrow />
+    <div className={`skills-and-experience ${loading ? "dom2image" : ""}`}>
+      <UpArrow handleArrowClick={handleArrowClick} />
       <br />
       <div className="columns">
         <div className="experiences">

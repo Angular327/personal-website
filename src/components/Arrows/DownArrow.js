@@ -3,11 +3,7 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react';
 import './DownArrow.css';
 
-const DownArrow = ({downClick, setActiveMovement}) => {
-
-  const handleArrowClick = () => {
-    setActiveMovement(downClick);
-  };
+const DownArrow = ({ handleArrowClick }) => {
 
   return (
     <div className="arrow-wrapper">

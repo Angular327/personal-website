@@ -4,22 +4,21 @@ import CanvasComponent from "./3Dcomponents/CanvasComponent";
 import { useState } from 'react';
 function App() {
   const [activeMovement, setActiveMovement] = useState(
-    { 
+    {
       location: 0,
       movement: 0,
       isActive: false
     }
   );
-  
+
   return (
     <div>
-      <Landing
-        activeMovement={activeMovement}
-        setActiveMovement={setActiveMovement} />
-
-      <SkillsAndExperience
-        activeMovement={activeMovement}
-        setActiveMovement={setActiveMovement} />
+      <Landing loading={true} />
+      <SkillsAndExperience loading={true} />
+      {!activeMovement.isActive && <>
+        {activeMovement.location === 0 && <Landing setActiveMovement={setActiveMovement} />}
+        {activeMovement.location === 1 && <SkillsAndExperience setActiveMovement={setActiveMovement} />}
+      </>}
 
       <CanvasComponent
         activeMovement={activeMovement}

@@ -3,16 +3,19 @@ import './LandingPage.css';
 import profilePicture from '../../assets/profile-picture.jpg';
 import DownArrow from '../Arrows/DownArrow';
 
-const LandingPage = ({ activeMovement, setActiveMovement }) => {
+const LandingPage = ({ setActiveMovement, loading = false }) => {
   const downClick = {
     location: 1,
     movement: 1,
     isActive: true
   }
 
+  const handleArrowClick = () => {
+    setActiveMovement(downClick);
+  };
 
   return (
-    <div id="landing-page">
+    <div className={`landing-page ${loading ? "dom2image" : ""}`}>
       <div className="content-container">
         <img src={profilePicture} alt="Profile" className="profile-picture" />
         <h1>Miles Rosenberg</h1>
@@ -25,8 +28,7 @@ const LandingPage = ({ activeMovement, setActiveMovement }) => {
       <div className="arrow-container">
         <DownArrow
           className="down-arrow"
-          downClick={downClick}
-          setActiveMovement={setActiveMovement}
+          handleArrowClick={handleArrowClick}
         />
       </div>
     </div>

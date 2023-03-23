@@ -12,7 +12,9 @@ function CameraComponent({ activeMovement, setActiveMovement }) {
     let clockRef = useRef(new THREE.Clock());
 
     useEffect(() => {
-        clockRef.current.start();
+        if (activeMovement.isActive) {
+            clockRef.current.start();
+        }
     }, [activeMovement]);
 
     //set intiial starting values
@@ -43,6 +45,7 @@ function CameraComponent({ activeMovement, setActiveMovement }) {
         }
     });
 
+    console.log(CameraTransitionsList[2]);
     //set perspective camera
     return (
         <perspectiveCamera

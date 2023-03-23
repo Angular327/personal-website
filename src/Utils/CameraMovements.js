@@ -87,4 +87,11 @@ export const CameraTransitionsList = [
         },
     ],
     CameraMovements1to2,
-]
+    [...CameraMovements1to2].reverse().map((item) => {
+        return {
+            time: CameraMovements1to2[CameraMovements1to2.length - 1].time - item.time,
+            position: item.position,
+            rotation: item.rotation
+        }
+    })
+];
