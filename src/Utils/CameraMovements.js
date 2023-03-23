@@ -76,3 +76,15 @@ export const CameraPositions = [
         },
     ]
 ]
+
+
+export const CameraTransitionsList = [
+    [
+        {
+            time: 0,
+            position: new THREE.Vector3(1.9, 19.15, -.48),
+            rotation: [90, 125, -90]
+        },
+    ],
+    CameraMovements1to2,
+]

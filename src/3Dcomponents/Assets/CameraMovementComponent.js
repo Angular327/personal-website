@@ -1,14 +1,19 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useThree, useFrame } from 'react-three-fiber'
 import * as THREE from 'three';
 import { updatePosition } from '../../Utils/MathematicFormulas';
+import { CameraTransitionsList } from '../../Utils/CameraMovements';
 
-function CameraComponent(props) {
+function CameraComponent({ activeMovement, setActiveMovement }) {
     //set up refs for camera and times
     const { camera } = useThree();
     const cameraRef = useRef();
-    const clockRef = useRef(new THREE.Clock());
-    const CameraMovements = props.CameraMovements;
+    const CameraMovements = CameraTransitionsList[activeMovement.movement];
+    let clockRef = useRef(new THREE.Clock());
+
+    useEffect(() => {
+        clockRef.current.start();
+    }, [activeMovement]);
 
     //set intiial starting values
     camera.position.set(...CameraMovements[0].position);
@@ -28,6 +33,13 @@ function CameraComponent(props) {
         if (CameraMovements.length > 1) {
             const t = Math.min(1, (clockRef.current.getElapsedTime() - CameraMovements[index].time) / (CameraMovements[index + 1].time - CameraMovements[index].time));
             updatePosition(t, camera, index, CameraMovements);
+        }
+
+        if (clockRef.current.getElapsedTime() > CameraMovements[CameraMovements.length - 1].time) {
+            setActiveMovement({
+                ...activeMovement,
+                isActive: false
+            })
         }
     });
 

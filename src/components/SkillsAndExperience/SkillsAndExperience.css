@@ -1,0 +1,146 @@
+#skills-and-experience {
+  background-color: #fff;
+  padding: 50px 0;
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.columns {
+  display: flex;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 50px;
+}
+
+.experiences {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.experiences h1 {
+  font-size: 36px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.jobs-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.job-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  transition: all 0.3s;
+}
+
+.job-title:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.job-title img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.job-text {
+  text-align: center;
+}
+
+.job-text h2 {
+  font-size: 24px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.job-text h3 {
+  font-size: 18px;
+  font-weight: 400;
+  color: #666;
+}
+
+.skills-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skills-section h1 {
+  font-size: 36px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.category h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+  width: 100px;
+  text-align: center;
+}
+
+.skill-card h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .columns {
+    flex-direction: column;
+  }
+
+  .jobs-container {
+    flex-direction: column;
+  }
+}
+
+.hidden {
+  display: none;
+}

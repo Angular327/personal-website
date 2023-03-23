@@ -1,17 +1,29 @@
+import Landing from './components/Landing/LandingPage';
+import SkillsAndExperience from "./components/SkillsAndExperience/SkillsAndExperience";
 import CanvasComponent from "./3Dcomponents/CanvasComponent";
-import AboutMe from "./components/AboutMe";
-import { useState } from "react";
-import LandingPage from "./components/LandingPage";
-import ContactAndLinks from "./components/ContactAndLinks";
-import SkillsAndExperience from "./components/SkillsAndExperience";
-
+import { useState } from 'react';
 function App() {
-
+  const [activeMovement, setActiveMovement] = useState(
+    { 
+      location: 0,
+      movement: 0,
+      isActive: false
+    }
+  );
+  
   return (
     <div>
-      <LandingPage />
-      <SkillsAndExperience />
-      <CanvasComponent />
+      <Landing
+        activeMovement={activeMovement}
+        setActiveMovement={setActiveMovement} />
+
+      <SkillsAndExperience
+        activeMovement={activeMovement}
+        setActiveMovement={setActiveMovement} />
+
+      <CanvasComponent
+        activeMovement={activeMovement}
+        setActiveMovement={setActiveMovement} />
     </div>
   );
 }

@@ -1,8 +1,16 @@
 import React from 'react';
 import './LandingPage.css';
-import profilePicture from '../assets/profile-picture.jpg';
-import DownArrow from './Arrows/DownArrow';
-const LandingPage = () => {
+import profilePicture from '../../assets/profile-picture.jpg';
+import DownArrow from '../Arrows/DownArrow';
+
+const LandingPage = ({ activeMovement, setActiveMovement }) => {
+  const downClick = {
+    location: 1,
+    movement: 1,
+    isActive: true
+  }
+
+
   return (
     <div id="landing-page">
       <div className="content-container">
@@ -15,7 +23,11 @@ const LandingPage = () => {
         </p>
       </div>
       <div className="arrow-container">
-        <DownArrow className="down-arrow"/>
+        <DownArrow
+          className="down-arrow"
+          downClick={downClick}
+          setActiveMovement={setActiveMovement}
+        />
       </div>
     </div>
   );

@@ -16,7 +16,12 @@ export const HtmlPlane = ({ index }) => {
 
   useEffect(() => {
     const element = document.getElementById(BillBoards[index].id);
-    element.classList.add("visible");
+
+    let isVisible = true;
+    if(element.classList.contains("hidden")) {
+      element.classList.remove();
+      isVisible = false;
+    }
 
     domtoimage.toBlob(element)
       .then((blob) => {
@@ -36,6 +41,11 @@ export const HtmlPlane = ({ index }) => {
           setRotation(BillBoards[index].rotation);
         });
       });
+
+      if(!isVisible) {
+        element.classList.add("hidden");
+      }
+
   }, []);
 
   return (

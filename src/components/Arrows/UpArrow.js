@@ -1,25 +1,25 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react';
-import './DownArrow.css';
+import './UpArrow.css';
 
-const DownArrow = ({downClick, setActiveMovement}) => {
+const UpArrow = ({upClick, setActiveMovement}) => {
 
   const handleArrowClick = () => {
-    setActiveMovement(downClick);
+    setActiveMovement(upClick);
   };
 
   return (
     <div className="arrow-wrapper">
-      <p className="arrow-text">Click to view next page</p>
       <FontAwesomeIcon
-        icon={faChevronDown}
+        icon={faChevronUp}
         onClick={handleArrowClick}
         size="4x"
         style={{ color: 'grey', cursor: 'pointer' }}
       />
+      <p className="arrow-text">Click to View Previous Page</p>
     </div>
   );
 };
 
-export default DownArrow;
+export default UpArrow;

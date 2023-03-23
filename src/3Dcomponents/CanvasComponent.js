@@ -1,14 +1,10 @@
 import { Canvas } from "@react-three/fiber";
 import BuildingComponent from './Assets/BuildingComponent';
-import { useState } from "react";
-import LandingPage from "../components/LandingPage";
 import HTMLPlane from "./Assets/HtmlPlane";
 import CameraMovementComponent from './Assets/CameraMovementComponent';
-import { CameraMovements1to2, CameraPositions } from '../Utils/CameraMovements';
+import { CameraTransitionsList } from '../Utils/CameraMovements';
 
-function CanvasComponent() {
-  const [show3D, setShow3d] = useState(true);
-
+function CanvasComponent({ activeMovement, setActiveMovement }) {
   return (
     <>
       <section className='App-header'>
@@ -19,19 +15,23 @@ function CanvasComponent() {
             left: 0,
             width: '100%',
             height: '100%',
-            visibility: show3D ? 'visible' : 'hidden',
+            zIndex: !activeMovement.isActive ? -1 : 1,
           }}
           gl={{
             preserveDrawingBuffer: true
           }}>
           <BuildingComponent />
           <ambientLight intensity={1} />
-          <CameraMovementComponent CameraMovements={CameraMovements1to2}/>;
-          <HTMLPlane index={0}/>
-          <HTMLPlane index={1}/>
+              <CameraMovementComponent 
+              activeMovement={activeMovement} 
+              setActiveMovement={setActiveMovement}
+              />
+              <HTMLPlane index={0} />
+              <HTMLPlane index={1} />
         </Canvas>
       </section>
     </>
+
   );
 }
 
