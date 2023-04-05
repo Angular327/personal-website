@@ -1,4 +1,5 @@
 {
+  "hompage": "https://{Angular327}.github.io/{personal-website}",
   "name": "personal-website",
   "version": "0.1.0",
   "private": true,
@@ -16,6 +17,7 @@
     "dom-to-image": "^2.6.0",
     "dom-to-image-more": "^3.1.0",
     "file-saver": "^2.0.5",
+    "gh-pages": "^5.0.0",
     "html-to-image": "^1.11.11",
     "html2canvas": "^1.4.1",
     "react": "^18.2.0",
@@ -31,8 +33,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "http-server -p 80 -c-1 build",
-    "build": "react-scripts build",    
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
