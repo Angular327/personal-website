@@ -45,7 +45,6 @@ function CameraComponent({ activeMovement, setActiveMovement }) {
         }
     });
 
-    console.log(CameraTransitionsList[2]);
     //set perspective camera
     return (
         <perspectiveCamera
