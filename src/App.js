@@ -50,8 +50,12 @@ const experiences = [
 function App() {
   return (
     <div className="site-shell">
+      <div className="aurora aurora-one" />
+      <div className="aurora aurora-two" />
+      <div className="aurora aurora-three" />
+
       <header className="hero">
-        <nav className="top-nav">
+        <nav className="top-nav bounce-in">
           <p className="brand">Miles Rosenberg</p>
           <div className="nav-links">
             {navItems.map((item) => (
@@ -82,7 +86,7 @@ function App() {
       </header>
 
       <main className="content-grid">
-        <section id="skills" className="panel">
+        <section id="skills" className="panel reveal panel-delay-1">
           <h2>Technical Stack</h2>
           <div className="skill-groups">
             <article>
@@ -103,7 +107,7 @@ function App() {
           </div>
         </section>
 
-        <section id="experience" className="panel">
+        <section id="experience" className="panel reveal panel-delay-2">
           <h2>Professional Experience</h2>
           {experiences.map((experience) => (
             <article key={experience.company} className="timeline-item">
@@ -121,7 +125,7 @@ function App() {
           ))}
         </section>
 
-        <section id="education" className="panel">
+        <section id="education" className="panel reveal panel-delay-3">
           <h2>Education</h2>
           <article className="education-card">
             <h3>Stevens Institute of Technology</h3>
@@ -130,7 +134,7 @@ function App() {
           </article>
         </section>
 
-        <section id="contact" className="panel contact-panel">
+        <section id="contact" className="panel contact-panel reveal panel-delay-4">
           <h2>Let&apos;s Build Something Reliable</h2>
           <p>
             I&apos;m currently open to software engineering opportunities focused on backend systems,
